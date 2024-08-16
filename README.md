@@ -1,7 +1,17 @@
 Technical assignment for Veeam.
 
-Requires python3
+## Requires python3
+Usage python3 Sync.py -[choosenFlag] [choosenValue]...
 
-Main function of script is distriputed into two threads.
-* 1. User input thread: Constant loop which checks for user input. Command are described at the start of the script or can be accesed with -h or help.
-  2. Sync thread: periodicaly calculates and compares md5 hashes of files in source and replica folder. Adjusts replica based on source and logs the actions.
+To display help message  run the program with flag -h
+
+All variables must be set for program to run:
+* Set interval with -i [interval in seconds]
+* Set source folder path with -sf [path to source folder]
+* Set replica folder path -rf [path to replica folder]
+* Set log file path -lf [path to log file]
+ ### Example command: 
+ * ### python3 Sync.py -i 30 -sf /home/veeam/source -rf /home/veeam/replica -lf /home/veaam/log.txt
+# Application can be exited only with keyboard interrupt! - CTRL+C
+# Folders must exist!
+
